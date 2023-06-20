@@ -74,3 +74,32 @@ input[type=text] {
 input[type=submit] {
     padding: 10px 25px;
 }
+
+li {
+    list-style: none;
+}
+
+.mymsg {
+    display: flex;
+    justify-content: right;
+}
+
+.othmsg {
+    display: flex;
+    justify-content: left;
+}
+
+.mymsg>div,
+.othmsg>div {
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.info {
+    font-size: small;
+    font-weight: 100;
+    color: silver;
+    display: flex;
+    justify-content: right;
+}

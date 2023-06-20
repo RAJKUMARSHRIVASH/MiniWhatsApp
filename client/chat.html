@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chats</title>
     <link rel="stylesheet" href="./chat.css">
 </head>
+
 <body>
     <div class="container">
         <div class="allContacts">
@@ -25,13 +27,26 @@
         </div>
         <div class="mainchat">
             <div class="demo">
-
                 <h1>Mini WhatsApp</h1>
                 <p>Start Chat with your friends</p>
-                click on the any of your contact and get started with live chat
+                click on the any of your contact and get started with live chat. <br>
+                <p>Messages are end to end encrypted.. </p> 
 
             </div>
-            <div class="msglist"></div>
+            <div class="msglist">
+                <div class="mymsg">
+                    <div>
+                        <div class="info">name timestamp</div>
+                        <li class="msg">Hello</li>
+                    </div>
+                </div>
+                <div class="othmsg">
+                    <div>
+                        <div class="info">name timestamp</div>
+                        <li class="msg">Hi..</li>
+                    </div>
+                </div>
+            </div>
             <form class="msgform">
                 <input type="text" placeholder="Type here">
                 <input type="submit" value="Send">
@@ -41,4 +56,5 @@
     </div>
 </body>
 <script src="./chat.js"></script>
+
 </html>

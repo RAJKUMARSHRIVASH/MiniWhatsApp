@@ -10,7 +10,7 @@ app.use(express.json());
 app.use("/api/user",userRouter);
 
 app.get("/", (req, res) => {
-    app.use(path.join(__dirname, "client"));
+    app.use(express.static(path.join(__dirname, "client")));
     res.sendFile(path.resolve(__dirname, "client", "index.html"));
 })
 

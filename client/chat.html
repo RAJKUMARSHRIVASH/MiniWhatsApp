@@ -30,7 +30,7 @@
                 <h1>Mini WhatsApp</h1>
                 <p>Start Chat with your friends</p>
                 click on the any of your contact and get started with live chat. <br>
-                <p>Messages are end to end encrypted.. </p> 
+                <p>Messages are end to end encrypted.. </p>
 
             </div>
             <div class="msglist">
@@ -47,8 +47,8 @@
                     </div>
                 </div>
             </div>
-            <form class="msgform">
-                <input type="text" placeholder="Type here">
+            <form class="msgform" onsubmit="msg(event)">
+                <input type="text" placeholder="Type here" name="msg">
                 <input type="submit" value="Send">
             </form>
         </div>
@@ -56,5 +56,49 @@
     </div>
 </body>
 <script src="./chat.js"></script>
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"
+    integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous">
+
+        // import { io } from "socket.io-client";
+
+
+    </script>
+<script>
+    const token = localStorage.getItem("token") || null;
+
+    if (!token) {
+        alert("login First");
+        window.location.href = "index.html"
+    }
+
+    let chats = document.querySelectorAll(".allContacts li");
+    let msglist = document.querySelector(".msglist");
+    let msgform = document.querySelector(".msgform");
+    let demo = document.querySelector(".demo");
+
+    for (let i = 0; i < chats.length; i++) {
+        chats[i].addEventListener("click", () => {
+            demo.classList.add("inactive");
+            msgform.classList.add("active");
+            msglist.classList.add("active");
+
+        })
+    }
+
+    const socket = io();
+    // const socket = io("https://miniwhatsapp.onrender.com");
+
+    function msg(event) {
+        event.preventDefault();
+        console.log(event.target.msg.value)
+    }
+    // send a message to the server
+    socket.emit("hello from client", 5, "6", { 7: Uint8Array.from([8]) });
+
+    // receive a message from the server
+    socket.on("hello from server", (...args) => {
+        console.log(args)
+    });
+</script>
 
 </html>

@@ -1,0 +1,37 @@
+body {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    gap: 5%;
+    padding: 30px;
+}
+
+.loginForm,
+.registerForm {
+    margin: auto;
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 10px;
+}
+
+.loginForm>form,
+.registerForm>form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+}
+
+input:focus {
+    border: 1px solid green;
+    outline: none;
+    background-color: aliceblue;
+}

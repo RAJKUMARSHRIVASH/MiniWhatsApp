@@ -1,5 +1,5 @@
-// const baseURL = "https://miniwhatsapp.onrender.com"
-const baseURL = "http://localhost:3000"
+const baseURL = "https://miniwhatsapp.onrender.com"
+// const baseURL = "http://localhost:3000"
 
 async function register(e) {
     e.preventDefault();
